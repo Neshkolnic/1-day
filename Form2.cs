@@ -35,10 +35,19 @@ namespace _1_day
             Form1 frm = new Form1();
             frm.ShowDialog();
         }
-
-        private void falsee()
+        static double CalculateFormula(double a, double b)
         {
+            // Вычисляем значения синуса и косинуса
+            double sina = Math.Sin(a);
+            
 
+            // Вычисляем числитель и знаменатель формулы
+            double numerator = Math.Pow(sina, 2) + Math.Pow(b, 3);
+            double denominator = Math.Sqrt(1 + (b / (a + Math.Cos(Math.PI + Math.Pow(b, 2)))));
+
+            // Вычисляем и возвращаем результат арктангенса от всей функции
+            return Math.Atan(numerator / denominator);
         }
+
     }
 }
