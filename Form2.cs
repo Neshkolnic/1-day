@@ -35,5 +35,10 @@ namespace _1_day
             Form1 frm = new Form1();
             frm.ShowDialog();
         }
+
+        private void falsee()
+        {
+
+        }
     }
 }
