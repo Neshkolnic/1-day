@@ -34,5 +34,31 @@ namespace _1_day
             Form3 frm = new Form3();
             frm.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            double x = double.Parse(textBox1.Text); // Пример значения x
+            double epsilon = 0.001; // Порог точности
+
+            double sum = 0;
+            int n = 1;
+            double term = CalculateSeries(x, n);
+            double prevTerm;
+
+            // Суммируем члены ряда до тех пор, пока разница между последовательными членами не станет меньше epsilon
+            do
+            {
+                sum += term;
+                n++;
+                prevTerm = term;
+                term = CalculateSeries(x, n);
+            } while (Math.Abs(term - prevTerm) >= epsilon);
+            label1.Text = sum.ToString();
+        }
+        // Функция для вычисления определенного члена ряда по его номеру n
+        static double CalculateSeries(double x, int n)
+        {
+            return Math.Pow(-1, n-1) * Math.Pow(x, 2 * n - 1) / (2 * n - 1);
+        }
     }
 }
