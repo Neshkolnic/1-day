@@ -49,5 +49,17 @@ namespace _1_day
             return Math.Atan(numerator / denominator);
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            { 
+                double a = double.Parse(textBox1.Text);
+                double b = double.Parse(textBox2.Text);
+
+                label3.Text = CalculateFormula(a, b).ToString();
+            
+            }
+            catch(Exception ex) { MessageBox.Show(ex.Message); }
+        }
     }
 }
