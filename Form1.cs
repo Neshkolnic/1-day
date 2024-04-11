@@ -39,11 +39,17 @@ namespace _1_day
         private void button1_Click(object sender, EventArgs e)
         {
             double x, y, z;
-            x = double.Parse(textBox1.Text);
+
+            try
+            {
+                x = double.Parse(textBox1.Text);
             y = double.Parse(textBox2.Text);    
             z = double.Parse(textBox3.Text);
 
-            textBox4.Text = SolvingProblem(x, y, z).ToString();
+
+                textBox4.Text = SolvingProblem(x, y, z).ToString();
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
 
     
 
